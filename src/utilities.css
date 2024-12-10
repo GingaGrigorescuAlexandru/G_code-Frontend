@@ -25,6 +25,10 @@
   align-items: center;
 }
 
+.full-view {
+    height: 100vh;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }

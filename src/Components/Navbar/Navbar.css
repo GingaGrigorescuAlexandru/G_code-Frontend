@@ -13,7 +13,13 @@
     border-radius: 5px;
 }
 
-p:hover {
+.navbar-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 8px;
+}
+
+.navbar-link:hover {
     color: lightgray;
     cursor: pointer;
 }

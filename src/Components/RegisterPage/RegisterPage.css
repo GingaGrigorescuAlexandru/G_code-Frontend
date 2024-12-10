@@ -1,0 +1,39 @@
+.register-container {
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px var(--secondary-color);
+    padding: 10px;
+}
+
+.register-form {
+
+}
+
+.register-form *{
+    margin: 5px;
+}
+
+.register-form input{
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    width: 95%;
+}
+
+.register-button {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 5px;
+    font-size: 24px;
+}
+
+.register-button:hover {
+    background-color: var(--secondary-hover);
+}
+
