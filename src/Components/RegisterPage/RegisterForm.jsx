@@ -5,8 +5,8 @@ const RegisterForm = () => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
-        password: '',
-        confirm_password: '',
+        password1: '',
+        password2: '',
         });
 
     const [errors, setErrors] = useState(null);
@@ -29,7 +29,7 @@ const RegisterForm = () => {
 
         const csrf_token = getCsrfToken();
 
-        if (formData.password != formData.confirm_password) {
+        if (formData.password !== formData.confirm_password) {
             setErrors('Passwords do not match.');
             return
             }
@@ -44,11 +44,9 @@ const RegisterForm = () => {
                 body: JSON.stringify(formData),
             });
 
-            console.log('MAAAAAAAAATTTTTTTTTTTTAAAAAAAAAAAAAAAAA')
-
             if (!response.ok) {
-                console.log('TACTUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU')
                 const errorData = await response.json()
+                console.log(errorData)
                 setErrors(errorData.message || 'Something went wrong');
                 return
             }
@@ -96,8 +94,8 @@ const RegisterForm = () => {
           <label>Password:</label>
           <input
             type="password"
-            name="password"
-            value={ formData.password }
+            name="password1"
+            value={ formData.password1 }
             onChange={ handleChange }
             required
           />
@@ -107,8 +105,8 @@ const RegisterForm = () => {
           <label>Confirm Password:</label>
           <input
             type="password"
-            name="confirm_password"
-            value={ formData.confirm_password }
+            name="password2"
+            value={ formData.password2 }
             onChange={ handleChange }
             required
           />
